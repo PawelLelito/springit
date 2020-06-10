@@ -6,7 +6,7 @@ Intro
 
 ## Build With
 
-Use the package manager [hypelink](google.com) to read more.
+Use the package manager [hypelink](https://google.com) to read more.
 
 ```bash
 some code
