@@ -1,8 +1,10 @@
-# Projec Title
+# Springit
 
 Intro
 
-## Installation
+## Deployment
+
+## Build With
 
 Use the package manager [hypelink](google.com) to read more.
 
@@ -20,4 +22,4 @@ some more code
 some stuff
 
 ## License
-[MIT](https://google.com)
+[Link](https://google.com)
