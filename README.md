@@ -1,29 +1,23 @@
-# Foobar
+# Projec Title
 
-Foobar is a Java library for dealing with word pluralization.
+Intro
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [hypelink](google.com) to read more.
 
 ```bash
-pip install foobar
+some code
 ```
 
 ## Usage
 
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+```
+some more code
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+some stuff
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://google.com)
