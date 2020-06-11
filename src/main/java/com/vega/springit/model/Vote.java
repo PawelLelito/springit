@@ -15,6 +15,4 @@ public class Vote {
     @GeneratedValue
     private Long id;
     private int vote;
-
-
 }
