@@ -1,9 +1,6 @@
 package com.vega.springit.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@RequiredArgsConstructor
 @Entity
-@Data
+@Getter @Setter
+@ToString
 @NoArgsConstructor
 public class Link extends Auditable {
     @Id
@@ -35,9 +34,9 @@ public class Link extends Auditable {
         this.url = url;
     }
 
-    public void addComment(Comment comment) {
+    /*public void addComment(Comment comment) {
 
         comments.add(comment);
 
-    }
+    }*/
 }
