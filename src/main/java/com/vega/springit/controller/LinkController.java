@@ -5,6 +5,7 @@ import com.vega.springit.repository.LinkRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/links")
@@ -24,20 +25,21 @@ public class LinkController {
 
     // CRUD
     @PostMapping("/create")
-    public Link create() {
-        return null;
+    public Link create(@ModelAttribute Link link) {
+        return linkRepository.save(link);
     }
     @GetMapping("/{id}")
-    public Link read(Long id) {
-        return null;
+    public Optional<Link> read(@PathVariable Long id) {
+        return linkRepository.findById(id);
     }
-    @PutMapping("/update")
-    public Link update() {
-        return null;
+    @PutMapping("/{id}")
+    public Link update(@PathVariable Long id, @ModelAttribute Link link) {
+        return linkRepository.save(link);
     }
 
-    @DeleteMapping("/delete")
-    public void delete() {
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        linkRepository.deleteById(id);
 
     }
 }
