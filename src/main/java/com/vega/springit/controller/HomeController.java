@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HomeController {
-//    @RequestMapping("/")
-//    public String home(Model model) {
-//       return "Hello, Spring Boot 2!";
-//    }
+    @RequestMapping("/home")
+    public String home(Model model) {
+        model.addAttribute("title", "Hello Thymeleaf");
+       return "home";
+    }
 }
