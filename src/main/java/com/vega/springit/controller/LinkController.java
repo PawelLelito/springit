@@ -1,6 +1,7 @@
 package com.vega.springit.controller;
 
 import com.vega.springit.model.Link;
+import com.vega.springit.repository.LinkRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,10 +10,16 @@ import java.util.List;
 @RequestMapping("/links")
 public class LinkController {
 
+    private LinkRepository linkRepository;
+
+    public LinkController(LinkRepository linkRepository){
+        this.linkRepository =linkRepository;
+    }
+
     // list
     @GetMapping("/")
     public List<Link> list() {
-        return null;
+        return linkRepository.findAll();
     }
 
     // CRUD
