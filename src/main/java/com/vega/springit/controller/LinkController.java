@@ -1,13 +1,8 @@
 package com.vega.springit.controller;
 
-import com.vega.springit.model.Link;
-import com.vega.springit.repository.LinkRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LinkController {
