@@ -1,4 +1,4 @@
-package com.vega.springit.model;
+package com.vega.springit.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.vega.springit.model;
+package com.vega.springit.domain;
 
 import lombok.*;
 
@@ -6,9 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 @RequiredArgsConstructor

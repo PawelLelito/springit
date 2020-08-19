@@ -1,6 +1,6 @@
 package com.vega.springit.controller;
 
-import com.vega.springit.model.Link;
+import com.vega.springit.domain.Link;
 import com.vega.springit.repository.LinkRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
