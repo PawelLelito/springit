@@ -33,7 +33,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .usernameParameter("email")
                 .and()
-                .logout();
+                .logout()
+                .and()
+                .rememberMe();
 
 
     // .and()
