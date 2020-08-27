@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final Logger logger = LoggerFactory.getLogger(UserService.class);
-    //private final RoleService roleService;
+
     private final UserRepository userRepository;
 
-    public UserService(RoleService roleService, UserRepository userRepository) {
-        this.roleService = roleService;
+    public UserService(UserRepository userRepository) {
+
         this.userRepository = userRepository;
     }
 
