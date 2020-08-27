@@ -16,7 +16,7 @@ import java.util.Date;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString
+//@ToString - comment out to avoid weird errors, also present in Hibernate
 @NoArgsConstructor
 public class Comment extends Auditable{
     @Id

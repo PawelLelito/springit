@@ -22,7 +22,7 @@ import com.vega.springit.service.BeanUtil;
 @RequiredArgsConstructor
 @Entity
 @Getter @Setter
-@ToString
+//@ToString - comment out to avoid weird errors, also present in Hibernate
 @NoArgsConstructor
 public class Link extends Auditable {
 
