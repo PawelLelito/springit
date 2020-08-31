@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.HashSet;
@@ -45,6 +46,30 @@ public class User implements UserDetails {
     )
 
     private Set<Role> roles = new HashSet<>();
+
+    @NonNull
+    @NotNull(message = "You must enter a first name.")
+    private String firstName;
+
+    @NonNull
+    @NotNull(message = "You must enter a lastName name.")
+    private String lastName;
+
+    @Transient
+    @Setter(AccessLevel.NONE)
+    private String fullName;
+
+    @NonNull
+    @NotNull
+    @Column(nullable = false, unique = true)
+    private String alias;
+
+    public String getFullName(){
+        return firstName + " " + lastName;
+    }
+
+
+
 
     public void addRole(Role role){
         roles.add(role);
