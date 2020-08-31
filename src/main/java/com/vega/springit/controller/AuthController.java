@@ -9,8 +9,12 @@ public class AuthController {
 
     private UserService userService;
 
+    public AuthController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "auth/login";
     }
 
