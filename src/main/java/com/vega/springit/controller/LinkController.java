@@ -4,6 +4,7 @@ import com.vega.springit.domain.Comment;
 import com.vega.springit.domain.Link;
 import com.vega.springit.repository.CommentRepository;
 import com.vega.springit.repository.LinkRepository;
+import com.vega.springit.service.LinkService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -22,12 +23,12 @@ import java.util.Optional;
 public class LinkController {
 
     private static final Logger logger = LoggerFactory.getLogger(LinkController.class);
-    private LinkRepository linkRepository;
+    private LinkService linkService;
     private CommentRepository commentRepository;
 
 
-    public LinkController(LinkRepository linkRepository, CommentRepository commentRepository) {
-        this.linkRepository = linkRepository;
+    public LinkController(LinkService linkService, CommentRepository commentRepository) {
+        this.linkService = linkService;
         this.commentRepository = commentRepository;
     }
 
@@ -38,14 +39,14 @@ public class LinkController {
 
     @GetMapping("/")
     public String list(Model model){
-        model.addAttribute("links", linkRepository.findAll());
+        model.addAttribute("links", linkService.findAll());
         return "link/list";
 
     }
 
     @GetMapping("/link/{id}")
     public String read(@PathVariable Long id,Model model) {
-        Optional<Link> link = linkRepository.findById(id);
+        Optional<Link> link = linkService.findById(id);
         if( link.isPresent() ) {
             Link currentLink = link.get();
             Comment comment = new Comment();
@@ -74,7 +75,7 @@ public class LinkController {
             return "link/submit";
         } else {
             // save our link
-            linkRepository.save(link);
+            linkService.save(link);
             logger.info("New Link was saved successfully.");
             redirectAttributes
                     .addAttribute("id", link.getId())
