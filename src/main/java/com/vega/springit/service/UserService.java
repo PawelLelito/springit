@@ -29,6 +29,7 @@ public class UserService {
         //Take password from the form and encode
         String secret = "{bcrypt}" + encoder.encode("password");
         user.setPassword(secret);
+        user.setConfirmPassword(secret);
         //confirm password
 
         //assign role to this user

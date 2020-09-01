@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Collection;
@@ -63,6 +64,11 @@ public class User implements UserDetails {
     @NotNull
     @Column(nullable = false, unique = true)
     private String alias;
+
+    @Transient
+    @NotEmpty(message= "Please enter Password Confirmation")
+    private String confirmPassword;
+
 
     public String getFullName(){
         return firstName + " " + lastName;
