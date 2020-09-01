@@ -17,10 +17,12 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder encoder;
     private final RoleService roleService;
+    private final MailService mailService;
 
-    public UserService(UserRepository userRepository, RoleService roleService) {
+    public UserService(UserRepository userRepository, RoleService roleService, MailService mailService) {
         this.userRepository = userRepository;
         this.roleService = roleService;
+        this.mailService=mailService;
         encoder = new BCryptPasswordEncoder();
     }
 
@@ -42,19 +44,22 @@ public class UserService {
 
         //save user
         save(user);
-
         // return the user
         return user;
     }
-
     public User save(User user) {
         return userRepository.save(user);
     }
 
     public void sendActivationEmail(User user){
+        mailService.sendActivationEmail(user);
+    }
 
+    public void sendWelcomeEmail(User user){
+        mailService.sendActivationEmail(user);
 
     }
+
 
     @Transactional
     public void saveUsers(User... users) {
