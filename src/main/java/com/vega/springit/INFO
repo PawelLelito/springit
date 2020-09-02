@@ -1,2 +1,3 @@
 Set up of AWS account and basic app config - Elastic Beanstalk Lesson 97
 Set up of AWS DB, note the AWS DB is not accessible from Sabio Network - Production Database Lesson 98
+Set up of profiles and preparation of app for prod deployment - "Package and Redeploy Lesson 100
